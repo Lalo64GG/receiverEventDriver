@@ -3,7 +3,6 @@ import amqp from "amqplib";
 const config = {
   protocol: "amqp",
   hostname: "3.228.161.219",
-  port: 5672,
   username: "guest",
   password: "guest",
 };
