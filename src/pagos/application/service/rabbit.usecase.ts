@@ -6,7 +6,7 @@ export class PagosRepository implements CrearPagoInterface {
   async sendpagos(pago: Pagos): Promise<boolean> {
     try {
       const channel = await connectToRabbitMQ();
-      await channel.sendToQueue("ventas", Buffer.from(JSON.stringify({message: 'venta creada', pago})));
+      await channel.sendToQueue("venta", Buffer.from(JSON.stringify({message: 'venta creada', pago})));
       console.log("Pago enviado a RabbitMQ:", pago);
       await channel.close();
       return true;
